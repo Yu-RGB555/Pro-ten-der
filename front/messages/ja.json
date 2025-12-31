@@ -1,0 +1,9 @@
+{
+  "practice": {
+    "title": "経過時間",
+    "start": "スタート",
+    "resume": "再開",
+    "stop": "停止",
+    "reset": "リセット"
+  }
+}

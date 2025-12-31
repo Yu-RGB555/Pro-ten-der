@@ -1,0 +1,9 @@
+{
+  "practice": {
+    "title": "ElapsedTime",
+    "start": "Start",
+    "resume": "Resume",
+    "stop": "Stop",
+    "reset": "Reset"
+  }
+}

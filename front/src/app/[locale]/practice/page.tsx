@@ -1,8 +1,10 @@
 'use client';
 
 import { useRef, useState } from "react"
+import { useTranslations } from "next-intl";
 
 export default function Stopwatch() {
+  const t = useTranslations('practice');
 
   const [elapsedTime, setElapsedTime] = useState(0);        // 累計計測時間
   const [isRunning, setIsRunning] = useState(false);        // 計測中判定フラグ
@@ -77,7 +79,7 @@ export default function Stopwatch() {
 
   return (
     <div className="m-8">
-      <h1 className="text-3xl text-center font-semibold font-mono">計測：{elapsedTime.toFixed(3)}</h1>
+      <h1 className="text-3xl text-center font-semibold tabular-nums">{t('title')}：{elapsedTime.toFixed(3)}</h1>
       <div className="flex justify-center m-4 gap-8">
 
         {/* 開始 */}
@@ -85,7 +87,7 @@ export default function Stopwatch() {
           className="px-2 py-1 border-gray-600 border-3 rounded-md hover:cursor-pointer hover:bg-gray-200"
           onClick={handleStart}
         >
-          <span className="font-semibold">Start</span>
+          <span className="font-semibold">{t('start')}</span>
         </button>
 
         {/* 再開 */}
@@ -93,7 +95,7 @@ export default function Stopwatch() {
           className="px-2 py-1 border-gray-600 border-3 rounded-md hover:cursor-pointer hover:bg-gray-200"
           onClick={handleResume}
         >
-          <span className="font-semibold">Resume</span>
+          <span className="font-semibold">{t('resume')}</span>
         </button>
 
         {/* ストップ */}
@@ -101,7 +103,7 @@ export default function Stopwatch() {
           className="px-2 py-1 border-gray-600 border-3 rounded-md hover:cursor-pointer hover:bg-gray-200"
           onClick={handlePause}
         >
-          <span className="justify-items-center font-semibold">Stop</span>
+          <span className="justify-items-center font-semibold">{t('stop')}</span>
         </button>
 
         {/* リセット */}
@@ -109,7 +111,7 @@ export default function Stopwatch() {
           className="px-2 py-1 border-gray-600 border-3 rounded-md hover:cursor-pointer hover:bg-gray-200"
           onClick={handleReset}
         >
-          <span className="justify-items-center font-semibold">Reset</span>
+          <span className="justify-items-center font-semibold">{t('reset')}</span>
         </button>
       </div>
     </div>
